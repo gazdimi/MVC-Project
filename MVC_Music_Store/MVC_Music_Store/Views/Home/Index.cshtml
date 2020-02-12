@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Music tracks for everyone</h1>
+    <p class="lead">MyMusic is a free web app for exploring and buying music tracks, even whole playlists.</p>
+    <p><a href="/Home/About" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <h2 class="text-center" style="padding-right: 80px">Getting started</h2>
+        <div style="display: flex; justify-content: center; flex-direction: row;">
+            <div class="col-sm-3">
+                <h3>As an Employee</h3>
+                <p>Explore mymusic, enter new music tracks, albums, playlists and albums. Make changes and improve the music library.</p>
+                <p class="btn btn-default">@Html.ActionLink("Enter as an employee", "Info", "Home")</p>
+            </div>
+            <div class="col-sm-3" style="padding-left: 120px; width: 35%">
+                <h3>As a Customer</h3>
+                <p>Explore mymusic, find out new music tracks, albums, playlists. Search for top 10 music tracks and even more.</p>
+                <p class="btn btn-default">@Html.ActionLink("Enter as a customer", "Index", "CustomersEmpty")</p>
+            </div>
+        </div>
+    </div>
+

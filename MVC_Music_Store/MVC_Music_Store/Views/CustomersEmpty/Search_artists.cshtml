@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVC_Music_Store.Models.Artist>
+@{
+    ViewBag.Title = "Search - Artists";
+}
+<br />
+<h2 class="text-center" style="margin-right: 85px">Search Top Artists</h2><br />
+<div class="col-md-4 col-md-offset-4">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label>Specify number of top artists</label>
+            <input type="number" class="form-control" id="top_number" min="1" max="100" name="top_number" placeholder="10">
+        </div>
+        <div class="form-group">
+            <label>From Date</label>
+            <input type="date" class="form-control" id="dateFrom" name="dateFrom" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>To Date</label>
+            <input type="date" class="form-control" id="dateTo" name="dateTo" placeholder="">
+            <small class="form-text text-muted mb-4">You can leave empty one of the form's criteria</small>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Search</button>
+        </div>
+    </form>
+</div>
+
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+    }
+
+</table>
+

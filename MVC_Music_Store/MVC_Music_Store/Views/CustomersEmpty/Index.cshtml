@@ -1,0 +1,53 @@
+﻿@model  List<MVC_Music_Store.Models.Track>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br/>
+<h3 class="text-center">MyMusic - Menu</h3><br/>
+<div class="row" style="display: flex; justify-content: center; flex-direction: row;">
+    <div class="col-sm-3">
+        <h4> @Html.ActionLink("Search Top Artists", "Search_artists")</h4>
+    </div>
+    <div class="col-sm-3">
+        <h4> @Html.ActionLink("Search Top Tracks", "Search_tracks")</h4>
+    </div>
+    <div class="col-sm-3">
+        <h4> @Html.ActionLink("Search Top Genres", "Search_genres")</h4>
+    </div>
+</div><br />
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Composer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Milliseconds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bytes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Album.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MediaType.Name)
+        </td>
+    </tr>
+    }
+
+
+</table>
+
